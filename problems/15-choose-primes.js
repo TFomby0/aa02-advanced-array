@@ -17,13 +17,27 @@ console.log(choosePrimes([5, 6, 4, 11, 2017])); // [ 5, 11, 2017 ]
 
 */
 
-let isPrime = function(num) {
-    // Your code here 
-}
+let isPrime = function (num) {
+  if (num < 2) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
-let choosePrimes = function(nums) {
-    // Your code here 
-}
+let choosePrimes = function (nums) {
+  let newArr = [];
+  nums.forEach((num) => {
+    if (isPrime(num)) {
+      newArr.push(num);
+    }
+  });
+  return newArr;
+};
 
 // alternative solution using Array.filter
 // let choosePrimes = function(nums) {
@@ -33,7 +47,7 @@ let choosePrimes = function(nums) {
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = choosePrimes;
+  module.exports = choosePrimes;
 } catch (e) {
-    module.exports = null;
+  module.exports = null;
 }

@@ -14,17 +14,24 @@ console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
 console.log(longestWord('')); // ''
 
 */
+let longestWord = function (sentence) {
+  let words = sentence.split(" ");
+  let longestWord = "";
 
-let longestWord = function(sentence) {
-    // Your code here 
+  words.forEach((word) => {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  });
+  return longestWord;
 };
 
-// Your code here 
+// Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
-    module.exports = longestWord;
+  module.exports = longestWord;
 } catch (e) {
-    module.exports = null;
+  module.exports = null;
 }
